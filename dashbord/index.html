@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashbord.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <section id="menu">
+        <div class="logo">
+            <h2><span>A</span>kila <span>W</span>ijerathna</h2>
+        </div>
+        <div class="items">
+            <li onclick="showSection('dashboard')"><i class="fa-solid fa-chart-pie"></i><a href="#dashboard">Dashboard</a></li>
+            <li onclick="showSection('add-student')"><i class="fa-solid fa-user-plus"></i><a href="#add-student">Add Student</a></li>
+            <li onclick="showSection('pdf-files')"><i class="fa-solid fa-file-circle-plus"></i><a href="#pdf-files">PDF Files</a></li>
+            <li onclick="showSection('all-pdf-files')"><i class="fa-solid fa-file-pdf"></i><a href="#all-pdf-files">All Pdf Files</a></li>
+            <li onclick="showSection('class-link')"><i class="fa-solid fa-link"></i><a href="#class-link">Upload Class Link</a></li>
+            <li onclick="showSection('live-class')"><i class="fa-solid fa-chalkboard-user"></i><a href="#live-class">Live Class Link</a></li>
+            <li onclick="showSection('edit-profile')"><i class="fa-solid fa-gear"></i><a href="#edit-profile">Edit Your Profile</a></li>
+            <li onclick="showSection('edit-users')"><i class="fa-solid fa-user-edit"></i><a href="#edit-users">Edit Users</a></li>
+            <li onclick="logout()"><i class="fa-solid fa-power-off"></i><a href="#">Logout</a></li>
+        </div>
+    </section>
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="profile">
+                <img src="src/profilep.jpg" alt="user-image">
+            </div>
+        </div>
+        
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="content-section">
+            <h1>Registered Users</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Mobile Number</th>
+                        <th>School</th>
+                        <th>Address</th>
+                        <th>Passwords</th>
+                        <th>Actions</th> <!-- Added Actions column -->
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    <!-- Rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Class Link Section -->
+<!-- Class Link Section -->
+<div id="class-link" class="content-section" style="display:none;">
+    <h1>Add Class Link</h1>
+    <form id="class-link-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+        
+        <label for="class-link">Class Link:</label>
+        <input type="text" id="class-link" name="class_link" required>
+        
+        <label for="pdf-title">Title:</label>
+        <input type="text" id="class-title" name="title" required>
+        
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+  <!-- Display existing class links -->
+   <div id="live-class" class="content-section" style="display: none;">
+  <h2>Existing Class Links</h2>
+  <table>
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Class Link</th>
+              <th>Title</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody id="class-link-list">
+          <!-- Rows will be inserted here -->
+      </tbody>
+  </table>
+</div>
+
+        <!-- Add Student Section -->
+<div id="add-student" class="content-section" style="display:none;">
+    <h1>Add New Student</h1>
+    <form id="add-student-form">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+        <label>Mobile Number:</label>
+        <input type="text" name="mobile_number" required>
+        <label>School:</label>
+        <input type="text" name="school" required>
+        <label>Address:</label>
+        <textarea name="address" required></textarea>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <button type="submit">Add Student</button>
+    </form>
+</div>
+
+<!-- Edit User Section -->
+<div id="edit-users" class="content-section" style="display:none;">
+    <h1>Edit User</h1>
+    <form id="edit-user-form">
+        <input type="hidden" name="user_id"> <!-- Hidden field for user ID -->
+
+        <label for="edit-username">Username:</label>
+        <input type="text" id="edit-username" name="username" required>
+
+        <label for="edit-mobile_number">Mobile Number:</label>
+        <input type="text" id="edit-mobile_number" name="mobile_number" required>
+
+        <label for="edit-school">School:</label>
+        <input type="text" id="edit-school" name="school" required>
+
+        <label for="edit-address">Address:</label>
+        <input type="text" id="edit-address" name="address" required>
+
+        <label for="edit-password">Password:</label>
+        <input type="text" id="edit-password" name="password" required>
+
+        <button type="button">Update User</button>
+    </form>
+</div>
+
+
+      <!-- PDF Files Section -->
+<div id="pdf-files" class="content-section" style="display:none;">
+    <h1>Upload PDF URL</h1>
+    <form id="pdf-upload-form" enctype="multipart/form-data">
+        <label for="pdf-title">Title:</label>
+        <input type="text" id="pdf-title" name="title" required>
+
+        <label for="pdf-url">PDF URL:</label>
+        <input type="url" id="pdf-url" name="url" required>
+
+        <button type="submit">Upload PDF URL</button>
+    </form>
+</div>
+
+<!-- Class Link Section -->
+<div id="all-pdf-files" class="content-section" style="display:none;">
+    <h1>All PDF Files</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Actions</th> <!-- Added Actions column -->
+            </tr>
+        </thead>
+        <tbody id="pdf-list">
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+
+
+        
+        <!-- Edit Profile Section -->
+        <div id="edit-profile" class="content-section" style="display:none;">
+            <h1>Edit Your Profile</h1>
+            <form id="edit-profile-form">
+                <label>Username:</label>
+                <input type="text" name="username" required>
+                <label>Mobile Number:</label>
+                <input type="text" name="mobile_number" required>
+                <label>School:</label>
+                <input type="text" name="school" required>
+                <label>Address:</label>
+                <textarea name="address" required></textarea>
+                <label>Password:</label>
+                <input type="password" name="password" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

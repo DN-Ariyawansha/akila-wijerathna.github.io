@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100..900&family=Noto+Serif+Sinhala:wght@100..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primery-color: #0D7C66;
+}
+
+body{
+    width: 100%;
+    background: #F5F7F8;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+    display: flex;
+}
+
+#menu {
+    background: #111827;
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#menu .logo{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 30px 0 0 30px;
+}
+
+#menu .logo span {
+    color: var(--primery-color);
+}
+
+#menu .items{
+    margin-top: 20px;
+}
+
+#menu .items li{
+    list-style: none;
+    padding: 17px 0;
+    transition: 0.3s ease;
+}
+
+#menu .items li:hover{
+    background: #253047;
+    cursor: pointer;
+}
+
+/* Add this CSS to your existing CSS file */
+
+#menu .items li.active {
+    border-left: 4px solid #fff;
+    background: #253047;
+}
+
+#menu .items li.active a {
+    color: #f3f4f6;
+}
+
+
+
+#menu .items li i{
+    color: var(--primery-color);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+
+#menu .items li:hover a{
+    color: #f3f4f6;
+}
+
+#menu .items li a{
+    text-decoration: none;
+    color: rgba(134, 141, 151);
+    font-weight: 300px;
+    transition: 0.3s ease;
+}
+
+#interface{
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    position: relative;
+}
+
+#interface .navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 15px 30px;
+    border-bottom: 3px solid var(--primery-color);
+}
+
+#interface .navigation .search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #b7bde6;
+    border-radius: 4px;
+}
+
+#interface .navigation .search i{
+    margin-right: 14px;
+}
+
+#interface .navigation .search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+#interface .navigation .profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#interface .navigation .profile img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.i-name{
+    color: #6b7288;
+}
+
+/* New styles for the added content sections */
+
+.content-section {
+    padding: 30px;
+    background-color: #fff;
+    margin: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h1 {
+    font-size: 24px;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.content-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.content-section table th,
+.content-section table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #111827;
+}
+
+.content-section table th {
+    background-color: var(--primery-color);
+    color: #fff;
+}
+
+.content-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #111827;
+}
+
+.content-section form input[type="text"],
+.content-section form input[type="password"],
+.content-section form input[type="file"],
+.content-section form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #b7bde6;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.content-section form textarea {
+    resize: vertical;
+}
+
+.content-section form button {
+    padding: 10px 15px;
+    background-color: var(--primery-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.content-section form button:hover {
+    background-color: #0a614c;
+}
+
+/* Existing styles... */
+
+/* New styles for action buttons in the table */
+table button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+table button.edit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+table button.edit-btn:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+table button.delete-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+table button.delete-btn:hover {
+    background-color: #e53935; /* Darker red */
+}
+/* General styles for buttons */
+
+
+/* Styles for forms */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    margin-right: 500px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 700px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+ /* Basic table styling */
+
+        /* Style for the Download button */
+        .download-btn {
+            background-color: #007bff; /* Blue background color */
+            color: white; /* White text color */
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+
+        .btn {
+            background-color: #007bff; /* Blue background color */
+            color: white; /* White text color */
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer;
+            margin-right: 5px; /* Space between buttons */
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .btn.delete-btn {
+            background-color: #dc3545; /* Red background color for delete */
+        }
+
+        .btn.delete-btn:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
