@@ -1,12 +1,10 @@
 <?php
 // fetch_lecture_details.php
 
-// Database connection details
-$servername = "localhost";
-$username = "root";
-$password = ""; // Use your database password
-$dbname = "akila_sir"; // Use your database name
-
+$servername = "sql12.freesqldatabase.com";
+$username = "sql12728588";
+$password = "wbrhtUq1KD";
+$dbname = "sql12728588";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
