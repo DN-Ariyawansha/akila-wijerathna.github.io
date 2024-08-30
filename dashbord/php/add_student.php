@@ -1,9 +1,9 @@
 <?php
 // Database connection
-$host = 'localhost'; // Change if different
-$db = 'akila_sir';
-$user = 'root'; // Change if different
-$pass = ''; // Change if different
+$servername = "sql12.freesqldatabase.com";
+$username = "sql12728588";
+$password = "wbrhtUq1KD";
+$dbname = "sql12728588";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
