@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "root"; // replace with your database username
-$password = ""; // replace with your database password
-$dbname = "akila_sir";
+$servername = "sql12.freesqldatabase.com";
+$username = "sql12728588";
+$password = "wbrhtUq1KD";
+$dbname = "sql12728588";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
