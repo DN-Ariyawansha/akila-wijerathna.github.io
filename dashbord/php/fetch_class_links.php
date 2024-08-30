@@ -2,10 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "sql12.freesqldatabase.com";
+$servername = "sql12.freesqldatabase.com:3306";
 $username = "sql12728588";
 $password = "wbrhtUq1KD";
 $dbname = "sql12728588";
+
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
