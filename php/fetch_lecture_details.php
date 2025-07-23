@@ -2,7 +2,7 @@
 // fetch_lecture_details.php
 
 // Database connection details
-$servername = "sql12.freesqldatabase.com:3306";
+$servername = "dinuwa.lk/999.tsd";
 $username = "sql12728588";
 $password = "wbrhtUq1KD";
 $dbname = "sql12728588";
